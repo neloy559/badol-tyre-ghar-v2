@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { connectDB } from '@/lib/mongodb'
 import { Product } from '@/lib/models'
 
+export const revalidate = 60 // Enable ISR caching for 60 seconds
+
 async function getFeaturedProducts() {
   try {
     await connectDB()
@@ -116,11 +118,21 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {featuredProducts.map((product) => (
                 <Link key={product._id} href={`/product/${product._id}`} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
-                  <div className="h-56 relative bg-slate-50">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="material-symbols-outlined text-slate-300 text-7xl">tire_repair</span>
-                    </div>
-                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full">IN STOCK</div>
+                  <div className="h-56 relative bg-slate-50 overflow-hidden">
+                    {product.images && product.images.length > 0 ? (
+                      <Image 
+                        src={encodeURI(product.images[0])} 
+                        alt={product.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span className="material-symbols-outlined text-slate-300 text-7xl">tire_repair</span>
+                      </div>
+                    )}
+                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full z-10">IN STOCK</div>
                   </div>
                   <div className="p-5">
                     <span className="text-xs font-bold text-primary uppercase tracking-wider">{product.category}</span>

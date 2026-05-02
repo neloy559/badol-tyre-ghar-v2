@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { connectDB } from '@/lib/mongodb'
 import { Product } from '@/lib/models'
+
+export const revalidate = 60
+
 
 const CATEGORIES = ['All', 'Tubes', 'Patches', 'Flaps', 'Gadgets', 'Tyre Sealants', 'Tyres']
 
@@ -39,8 +43,9 @@ async function getCounts() {
   }
 }
 
-export function generateMetadata({ searchParams }) {
-  const cat = searchParams?.cat || 'All'
+export async function generateMetadata({ searchParams }) {
+  const resolvedSearchParams = await searchParams
+  const cat = resolvedSearchParams?.cat || 'All'
   return {
     title: `${cat === 'All' ? 'All Products' : cat} | Badol Tyre Ghar B2B Catalog`,
     description: `Browse wholesale ${cat === 'All' ? 'automotive products' : cat} from Badol Tyre Ghar. Best B2B prices in Bangladesh.`,
@@ -48,7 +53,8 @@ export function generateMetadata({ searchParams }) {
 }
 
 export default async function ProductsPage({ searchParams }) {
-  const activeCat = searchParams?.cat || 'All'
+  const resolvedSearchParams = await searchParams
+  const activeCat = resolvedSearchParams?.cat || 'All'
   const [products, counts] = await Promise.all([getProducts(activeCat), getCounts()])
 
   return (
@@ -141,8 +147,18 @@ export default async function ProductsPage({ searchParams }) {
                   className="group bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/20 transition-all"
                 >
                   <div className="aspect-square bg-surface-container overflow-hidden relative flex items-center justify-center">
-                    <span className="material-symbols-outlined text-slate-300 text-8xl group-hover:scale-110 transition-transform duration-500">tire_repair</span>
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">IN STOCK</div>
+                    {product.images && product.images.length > 0 ? (
+                      <Image 
+                        src={encodeURI(product.images[0])} 
+                        alt={product.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <span className="material-symbols-outlined text-slate-300 text-8xl group-hover:scale-110 transition-transform duration-500">tire_repair</span>
+                    )}
+                    <div className="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-xs font-bold rounded-full z-10">IN STOCK</div>
                   </div>
                   <div className="p-5">
                     <div className="flex justify-between items-start mb-2">

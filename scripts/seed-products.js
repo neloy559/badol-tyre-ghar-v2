@@ -2,7 +2,7 @@
 // Run with: node scripts/seed-products.js
 // Requires MONGODB_URI in .env.local
 
-import 'dotenv/config'
+
 import mongoose from 'mongoose'
 import { createRequire } from 'module'
 

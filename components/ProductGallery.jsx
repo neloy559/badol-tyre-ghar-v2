@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function ProductGallery({ images }) {
   const defaultImage = images && images.length > 0 ? images[0] : null
@@ -18,7 +19,13 @@ export default function ProductGallery({ images }) {
   return (
     <div>
       <div className="aspect-square bg-surface-container-low rounded-3xl border border-outline-variant overflow-hidden flex items-center justify-center mb-4 relative">
-        <img src={activeImg} alt="Product Image" className="w-full h-full object-cover" />
+        <Image 
+          src={encodeURI(activeImg)} 
+          alt="Product Image" 
+          fill 
+          className="object-contain" 
+          priority
+        />
       </div>
       {images.length > 1 && (
         <div className="flex gap-3 overflow-x-auto pb-2">
@@ -26,9 +33,14 @@ export default function ProductGallery({ images }) {
             <div 
               key={i} 
               onClick={() => setActiveImg(img)}
-              className={`w-20 h-20 shrink-0 rounded-xl border-2 overflow-hidden bg-surface-container-low flex items-center justify-center cursor-pointer transition-colors ${activeImg === img ? 'border-primary' : 'border-outline-variant hover:border-primary/50'}`}
+              className={`w-20 h-20 shrink-0 rounded-xl border-2 overflow-hidden bg-surface-container-low relative cursor-pointer transition-colors ${activeImg === img ? 'border-primary' : 'border-outline-variant hover:border-primary/50'}`}
             >
-              <img src={img} className="w-full h-full object-cover" alt="Thumb" />
+              <Image 
+                src={encodeURI(img)} 
+                fill
+                className="object-cover" 
+                alt="Thumb" 
+              />
             </div>
           ))}
         </div>
