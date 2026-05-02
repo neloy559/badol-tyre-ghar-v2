@@ -26,6 +26,7 @@ export async function POST(request) {
     }
 
     product.images = data.images || product.images
+    product.isPlaceholder = data.isPlaceholder !== undefined ? data.isPlaceholder : product.isPlaceholder
     product.content = { ...product.content, ...data.content }
     
     await product.save()

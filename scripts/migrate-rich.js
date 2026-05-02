@@ -84,14 +84,25 @@ async function runMigration() {
     
     // Read Images
     const imgDir = path.join(dir, 'cat img')
+    let hasActualImage = false
     if (fs.existsSync(imgDir)) {
-      const images = fs.readdirSync(imgDir)
-      for (const img of images) {
-        // Construct public URL path
-        productData.images.push(`/products/${category}/${skuOrName}/${img}`)
+      const images = fs.readdirSync(imgDir).filter(f => f.match(/\.(jpg|jpeg|png|webp|gif)$/i))
+      if (images.length > 0) {
+        hasActualImage = true
+        for (const img of images) {
+          productData.images.push(`/products/${category}/${skuOrName}/${img}`)
+        }
       }
     }
     
+    // If no actual images, use a random placeholder
+    if (!hasActualImage) {
+      const randomId = Math.floor(Math.random() * 8) + 1
+      productData.images = [`/placeholders/placeholder img (${randomId}).jpeg`]
+    }
+    
+    productData.isPlaceholder = !hasActualImage
+
     // Read Text Files
     for (const [file, key] of Object.entries(TEXT_FILES)) {
       const filePath = path.join(dir, file)
@@ -100,15 +111,12 @@ async function runMigration() {
       }
     }
     
-    // Only send if we found something
-    if (productData.images.length > 0 || Object.keys(productData.content).length > 0) {
-      console.log(`Uploading rich data for ${skuOrName}...`)
-      const result = await postData(productData)
-      if (result.success) {
-        console.log(`  ✅ Success!`)
-      } else {
-        console.log(`  ❌ Failed:`, result.message || result.body)
-      }
+    console.log(`Uploading rich data for ${skuOrName}... ${hasActualImage ? '(Actual)' : '(Placeholder)'}`)
+    const result = await postData(productData)
+    if (result.success) {
+      console.log(`  ✅ Success!`)
+    } else {
+      console.log(`  ❌ Failed:`, result.message || result.body)
     }
   }
   

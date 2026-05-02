@@ -8,7 +8,11 @@ export const revalidate = 60 // Enable ISR caching for 60 seconds
 async function getFeaturedProducts() {
   try {
     await connectDB()
-    const products = await Product.find({ inStock: true }).limit(8).lean()
+    // Prefer Tyre Sealants with actual images first, then others
+    const products = await Product.find({ 
+      inStock: true, 
+      isPlaceholder: false 
+    }).sort({ category: -1 }).limit(8).lean() 
     return JSON.parse(JSON.stringify(products))
   } catch {
     return []
