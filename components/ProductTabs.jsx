@@ -3,21 +3,22 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const TABS = [
-  { id: 'overview',        label: 'Product Overview' },
-  { id: 'engineering',     label: 'Engineering & Quality' },
-  { id: 'specifications',  label: 'Specifications' },
-  { id: 'delivery',        label: 'Delivery Terms' },
+  { id: 'marketing',     label: 'Product Overview' },
+  { id: 'engineering',   label: 'Core Engineering' },
+  { id: 'performance',   label: 'Performance Metrics' },
+  { id: 'compatibility', label: 'Application & Compatibility' },
+  { id: 'consumerTrust', label: 'Consumer Value & Trust' },
 ]
 
 export default function ProductTabs({ product }) {
-  const [activeTab, setActiveTab] = useState('overview')
+  const [activeTab, setActiveTab] = useState('marketing')
 
   const tabContent = {
-    overview:       product.content?.overview       || product.description || 'Detailed product overview coming soon.',
-    engineering:    product.content?.engineering    || 'Engineering and quality specifications are being updated.',
-    specifications: product.content?.specifications || 'Technical specifications will be available soon.',
-    delivery:       product.content?.delivery       ||
-      'We offer same-day dispatch for in-stock items across Rangpur Division. For bulk B2B orders (50+ units), we provide priority logistics. Delivery timelines and credit terms are available on request via WhatsApp.',
+    marketing:     product.content?.marketing     || product.description || 'Marketing details coming soon.',
+    engineering:   product.content?.engineering   || 'Engineering and quality specifications coming soon.',
+    performance:   product.content?.performance   || 'Performance metrics coming soon.',
+    compatibility: product.content?.compatibility || 'Application compatibility information coming soon.',
+    consumerTrust: product.content?.consumerTrust || 'Value proposition coming soon.',
   }
 
   return (
@@ -41,11 +42,11 @@ export default function ProductTabs({ product }) {
 
       {/* Tab Content */}
       <div className="bg-white rounded-b-2xl rounded-tr-2xl border border-outline-variant border-t-0 p-8 mt-0">
-        {tabContent[activeTab].split('\n').map((para, i) =>
+        {tabContent[activeTab]?.split('\n').map((para, i) =>
           para.trim() ? <p key={i} className="text-slate-600 leading-relaxed mb-4 text-sm">{para}</p> : null
         )}
 
-        {activeTab === 'delivery' && (
+        {activeTab === 'consumerTrust' && (
           <div className="mt-6 bg-surface-container-low rounded-xl p-6 border border-outline-variant">
             <h4 className="font-bold text-on-surface mb-4">B2B Order Enquiry</h4>
             <div className="flex flex-wrap gap-3">

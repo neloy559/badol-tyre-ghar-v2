@@ -3,6 +3,10 @@ import { notFound } from 'next/navigation'
 import { connectDB } from '@/lib/mongodb'
 import { Product } from '@/lib/models'
 import ProductTabs from '@/components/ProductTabs'
+import ProductGallery from '@/components/ProductGallery'
+
+export const revalidate = 60
+
 
 async function getProduct(id) {
   try {
@@ -10,13 +14,15 @@ async function getProduct(id) {
     const product = await Product.findById(id).lean()
     if (!product) return null
     return JSON.parse(JSON.stringify(product))
-  } catch {
+  } catch (error) {
+    console.error("getProduct error:", error)
     return null
   }
 }
 
 export async function generateMetadata({ params }) {
-  const product = await getProduct(params.id)
+  const { id } = await params
+  const product = await getProduct(id)
   if (!product) return { title: 'Product Not Found | Badol Tyre Ghar' }
   return {
     title: `${product.name} | ${product.category} | Badol Tyre Ghar`,
@@ -25,7 +31,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ProductDetailPage({ params }) {
-  const product = await getProduct(params.id)
+  const { id } = await params
+  const product = await getProduct(id)
   if (!product) notFound()
 
   const waText = encodeURIComponent(`আমি ${product.name} (SKU: ${product.sku}) অর্ডার করতে চাই`)
@@ -47,19 +54,7 @@ export default async function ProductDetailPage({ params }) {
       {/* Hero Split */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
         {/* Gallery */}
-        <div>
-          <div className="aspect-square bg-surface-container-low rounded-3xl border border-outline-variant overflow-hidden flex items-center justify-center mb-4">
-            <span className="material-symbols-outlined text-slate-300 text-[180px]">tire_repair</span>
-          </div>
-          {/* Thumbs */}
-          <div className="flex gap-3">
-            {[1, 2, 3].map(i => (
-              <div key={i} className="w-20 h-20 rounded-xl border-2 border-outline-variant bg-surface-container-low flex items-center justify-center cursor-pointer hover:border-primary transition-colors">
-                <span className="material-symbols-outlined text-slate-300 text-3xl">tire_repair</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ProductGallery images={product.images} />
 
         {/* Info Panel */}
         <div className="flex flex-col">
