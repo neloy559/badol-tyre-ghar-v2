@@ -1,0 +1,11 @@
+Product: Bend Nozzle
+ID: Gadgets_&_Tools_Bend_Nozzle
+Category: Gadgets
+Vehicle: সার্ভিসিং ও মেরামত (Service & Repair)
+Origins: Imported High Quality
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+Specially designed bent angle to fit e-bikes and scooters where wheel hub space is tight, making air filling much easier.
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+Clean the rim hole thoroughly before installation. Tighten the nut securely to prevent slow leaks. (3.00-10,3.50-10,3.00-12)

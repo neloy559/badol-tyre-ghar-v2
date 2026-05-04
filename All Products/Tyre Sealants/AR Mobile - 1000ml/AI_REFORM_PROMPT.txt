@@ -1,0 +1,6 @@
+Prompt for AI Image Beautification & Branding:
+"Professional studio product photography enhancement of the provided Tyre Sealants (AR Mobile - 1000ml).
+STRICT REQUIREMENT: Maintain the exact design, text, branding, colors, and physical integrity of the original item from the input image. ZERO modifications to the product's core structure.
+BRANDING: Add a prominent but tasteful 'Badol Tyre Ghar' or 'BTG' branding to the product or as a professional studio watermark to emphasize the brand ownership.
+BEAUTIFICATION: Enhance the lighting to be soft, cinematic, and professional. Highlight the realistic material textures and natural sheen. Place the item in a premium, clean professional studio setting with a subtle gradient background and elegant soft shadows.
+QUALITY: Ultra-high definition, 8k, photorealistic, sharp focus, e-commerce catalog standard, professional product showcase style."

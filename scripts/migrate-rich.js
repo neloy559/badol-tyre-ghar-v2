@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const https = require('https')
 
-const SRC_DIR = path.join(__dirname, '..', '..', 'All Products')
+const SRC_DIR = path.join(__dirname, '..', 'All Products')
 const API_URL = 'https://websitev2-two-phi.vercel.app/api/update-product'
 
 // Names of the 5 rich text files
@@ -83,10 +83,11 @@ async function runMigration() {
     }
     
     // Read Images
-    const imgDir = path.join(dir, 'cat img')
+    const catImg2Dir = path.join(dir, 'cat img 2')
     let hasActualImage = false
-    if (fs.existsSync(imgDir)) {
-      const images = fs.readdirSync(imgDir).filter(f => f.match(/\.(jpg|jpeg|png|webp|gif)$/i))
+    
+    if (fs.existsSync(catImg2Dir)) {
+      const images = fs.readdirSync(catImg2Dir).filter(f => f.match(/\.(jpg|jpeg|png|webp|gif|jpeg)$/i))
       if (images.length > 0) {
         hasActualImage = true
         for (const img of images) {

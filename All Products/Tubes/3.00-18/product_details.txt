@@ -1,0 +1,11 @@
+Product: 3.00-18
+ID: Tubes_3.00-18
+Category: Tubes
+Vehicle: মোটরসাইকেল / বাইক (Motorcycle / Bike)
+Origins: Reliable Brands (Badol Tyre Ghar / MTF / Zess / Hussain)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+High heat resistance and stretchable rubber formulation designed to carry heavy commercial loads without bursting.
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+Ensure the inside of the rim and tyre are completely clean. Inflate slightly to remove folds before installing into the tyre to avoid pinching.

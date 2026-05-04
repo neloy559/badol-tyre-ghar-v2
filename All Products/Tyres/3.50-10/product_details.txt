@@ -1,0 +1,11 @@
+Product: 3.50-10
+ID: Tyres(New):_3.50-10
+Category: Tyres(New)_
+Vehicle: ইলেক্ট্রিক বাইক (E-Vehicle)
+Brands: Tourino
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+উন্নত মানের দীর্ঘস্থায়ী পণ্য।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

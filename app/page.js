@@ -120,16 +120,17 @@ export default async function HomePage() {
           </div>
           {featuredProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {featuredProducts.map((product) => (
+              {featuredProducts.map((product, index) => (
                 <Link key={product._id} href={`/product/${product._id}`} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
-                  <div className="h-56 relative bg-slate-50 overflow-hidden">
+                  <div className="aspect-square relative bg-white overflow-hidden p-4">
                     {product.images && product.images.length > 0 ? (
                       <Image 
                         src={encodeURI(product.images[0])} 
                         alt={product.name}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-contain group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        priority={index < 4}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">

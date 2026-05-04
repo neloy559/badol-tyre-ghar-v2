@@ -1,0 +1,11 @@
+Product: Air Pressure Nozzle
+ID: Gadgets_&_Tools_Air_Pressure_Nozzle
+Category: Gadgets
+Vehicle: সার্ভিসিং ও মেরামত (Service & Repair)
+Origins: Heavy Duty (Local & Imported variants)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+Fast and secure connection to tyre valves for high-pressure air filling.
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

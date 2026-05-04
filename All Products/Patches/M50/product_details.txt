@@ -1,0 +1,11 @@
+Product: M50
+ID: Patches_M50
+Category: Patches
+Vehicle: সার্ভিসিং ও মেরামত (Service & Repair)
+Origins: India (Imported), Original Quality
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+Tube Patch (Tube Potti). M25 has 25 pcs (Larger size), M50 has 50 pcs (Smaller size).
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+(Standard Tube Patch Manual)

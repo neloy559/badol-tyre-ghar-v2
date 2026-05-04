@@ -1,0 +1,11 @@
+Product: Omni
+ID: Tyre_Sealants_Omni
+Category: Tyre Sealants
+Vehicle: সার্ভিসিং ও মেরামত (Service & Repair)
+Origins: Gazi (Local), Omni (Imported)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+Professional-grade adhesives for bonding rubber patches to tires and tubes.
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+Apply a thin, even layer to a roughed surface. Wait 3-5 minutes until the solution becomes tacky (not wet) before applying the patch.

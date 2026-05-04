@@ -140,20 +140,21 @@ export default async function ProductsPage({ searchParams }) {
 
           {products.length > 0 ? (
             <div className="product-grid">
-              {products.map(product => (
+              {products.map((product, index) => (
                 <Link
                   key={product._id}
                   href={`/product/${product._id}`}
                   className="group bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/20 transition-all"
                 >
-                  <div className="aspect-square bg-surface-container overflow-hidden relative flex items-center justify-center">
+                  <div className="aspect-square bg-white overflow-hidden relative flex items-center justify-center p-4">
                     {product.images && product.images.length > 0 ? (
                       <Image 
                         src={encodeURI(product.images[0])} 
                         alt={product.name}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-contain group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        priority={index < 8}
                       />
                     ) : (
                       <span className="material-symbols-outlined text-slate-300 text-8xl group-hover:scale-110 transition-transform duration-500">tire_repair</span>

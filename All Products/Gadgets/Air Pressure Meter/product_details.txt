@@ -1,0 +1,11 @@
+Product: Air Pressure Meter
+ID: Gadgets_&_Tools_Air_Pressure_Meter
+Category: Gadgets
+Vehicle: সার্ভিসিং ও মেরামত (Service & Repair)
+Origins: Premium Quality (Various Brands / Imported)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+Highly accurate analog pressure measuring for commercial tyres (up to 40MPa / high-pressure capable).
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

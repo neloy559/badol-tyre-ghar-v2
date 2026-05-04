@@ -1,0 +1,6 @@
+Prompt for AI Video Beautification & Branding (8 Seconds):
+"An 8-second high-end cinematic product showcase video based on the provided Tubes (6.00-16).
+STRICT REQUIREMENT: The product's physical structure and original branding must remain perfectly constant. NO structural warping.
+BRANDING: The 'BTG' logo should be subtly integrated into the studio environment or as a professional overlay.
+BEAUTIFICATION: The camera performs a smooth, stabilized cinematic pan or slow orbit around the product. Enhance the environment to a premium professional studio with dynamic lighting and moving highlights. 
+QUALITY: Photorealistic, 4k resolution, 24fps, smooth motion, commercial advertising standard."

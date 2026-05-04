@@ -1,0 +1,11 @@
+Product: 3.25-16
+ID: Tyres(New):_3.25-16
+Category: Tyres(New)_
+Vehicle: ই-রিকশা / অটোরিক্সা (E-Rickshaw / Borak)
+Brands: Hussain(Shakti, Dragon, Shark, Power, Rove-M), MTF(Juboraj, Union), Rupsha(Nawab, Sultan, Ultra), Zess(Juboraj)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+উন্নত মানের দীর্ঘস্থায়ী পণ্য।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

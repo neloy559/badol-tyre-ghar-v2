@@ -1,0 +1,11 @@
+Product: 7.00-15
+ID: Flaps_7.00-15
+Category: Flaps
+Vehicle: পিকআপ / ট্রাক্টর (Pickup / Tractor Front)
+Origins: Badol Tyre Ghar & Zess (Premium rubber)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+Acts as a crucial protective layer between the tube and the rim, preventing the metal rim from cutting or burning the tube under heavy friction.
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+Clean the interior of the rim thoroughly. Lay the flap absolutely flat without overlaps before inserting the tube.

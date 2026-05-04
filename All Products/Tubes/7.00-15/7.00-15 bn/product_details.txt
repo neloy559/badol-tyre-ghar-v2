@@ -1,0 +1,11 @@
+Product: 7.00-15 bn
+ID: Tubes_7.00-15_bn
+Category: Tubes
+Vehicle: Tractor, Purono Truck, Trolly (Heavy Duty)
+Origins: Reliable Brands (Badol Tyre Ghar / MTF / Zess / Hussain)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+বড় রিম হোলের (16mm) জন্য উপযুক্ত। হাই প্রেশার ও ভারী লোড বহনে সক্ষম। ট্রাক্টর ও পুরনো মডেলের টাটা/লেল্যান্ড ট্রাকের জন্য বিশেষ নির্দেশিত।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+রিমের ছিদ্র বড় হলে অবশ্যই এই বড় নজেল ব্যবহার করুন। ছোট নজেল ব্যবহার করলে ভালভ কেটে যাওয়ার ঝুঁকি থাকে।

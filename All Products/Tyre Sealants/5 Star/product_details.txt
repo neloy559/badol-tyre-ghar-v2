@@ -1,0 +1,11 @@
+Product: 5 Star
+ID: Tyre_Sealants_5_Star
+Category: Tyre Sealants
+Vehicle: সার্ভিসিং ও মেরামত (Service & Repair)
+Origins: N/A
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+উন্নত মানের দীর্ঘস্থায়ী পণ্য।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

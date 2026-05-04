@@ -1,0 +1,11 @@
+Product: 2.75-14
+ID: Tyres(New):_2.75-14
+Category: Tyres(New)_
+Vehicle: ই-রিকশা / মিশুক (E-Rickshaw / Mishuk)
+Brands: Hussain, Zess, Rupsha
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+উন্নত মানের দীর্ঘস্থায়ী পণ্য।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

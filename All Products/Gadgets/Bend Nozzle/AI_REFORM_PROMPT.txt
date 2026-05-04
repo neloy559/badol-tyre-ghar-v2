@@ -1,0 +1,6 @@
+Prompt for AI Image Beautification & Branding:
+"Professional studio product photography enhancement of the provided Gadgets (Bend Nozzle).
+STRICT REQUIREMENT: Maintain the exact design, text, branding, colors, and physical integrity of the original item from the input image. ZERO modifications to the product's core structure.
+BRANDING: Incorporate a subtle, high-end 'BTG' or 'Badol Tyre Ghar' logo branding into the scene, ensuring it looks like an integrated part of the professional studio presentation.
+BEAUTIFICATION: Enhance the lighting to be soft, cinematic, and professional. Highlight the realistic material textures and natural sheen. Place the item in a premium, clean professional studio setting with a subtle gradient background and elegant soft shadows.
+QUALITY: Ultra-high definition, 8k, photorealistic, sharp focus, e-commerce catalog standard, professional product showcase style."

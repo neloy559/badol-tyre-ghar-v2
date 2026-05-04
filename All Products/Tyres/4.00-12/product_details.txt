@@ -1,0 +1,11 @@
+Product: 4.00-12
+ID: Tyres(New):_4.00-12
+Category: Tyres(New)_
+Vehicle: ই-রিকশা / ভ্যান (E-Rickshaw / Van)
+Brands: Hussain(Shakti, Rove-M)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+উন্নত মানের দীর্ঘস্থায়ী পণ্য।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+কোনো বিশেষ নির্দেশিকা নেই।

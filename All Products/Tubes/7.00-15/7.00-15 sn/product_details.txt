@@ -1,0 +1,11 @@
+Product: 7.00-15 sn
+ID: Tubes_7.00-15_sn
+Category: Tubes
+Vehicle: Pickup, Microbus, Modern Van (Standard Commercial)
+Origins: Reliable Brands (Badol Tyre Ghar / MTF / Zess / Hussain)
+
+--- ব্যবহারের ক্ষেত্র (Use Case) ---
+স্ট্যান্ডার্ড রিম হোলের (11.5mm) জন্য তৈরি। আধুনিক পিকআপ (Tata Ace, Mahindra Bolero), হাইয়েস মাইক্রোবাস ও প্যাসেঞ্জার কারের জন্য উপযুক্ত।
+
+--- ব্যবহার নির্দেশিকা (Manual) ---
+এটি একটি ইউনিভার্সাল সাইজ। আধুনিক প্রায় সব কমার্শিয়াল লাইট ভেহিকেলে এটি ব্যবহার করা হয়।
