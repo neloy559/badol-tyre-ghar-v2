@@ -54,14 +54,19 @@ export default function PartnerPage() {
 
           {status === 'success' ? (
             <div className="text-center py-12">
-              <span className="material-symbols-outlined text-emerald-500 text-6xl" style={{fontVariationSettings:"'FILL' 1"}}>check_circle</span>
-              <h3 className="text-xl font-bold text-slate-900 mt-4 mb-2">Application Submitted!</h3>
-              <p className="text-slate-500 mb-6">Our team will contact you within 24 hours.</p>
-              <a href={`https://wa.me/8801647794452?text=আমি পার্টনার ফর্ম সাবমিট করেছি - ${form.businessName}`} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-wa text-white font-bold px-8 py-3 rounded-xl">
-                <span className="material-symbols-outlined">chat</span>
-                Follow up on WhatsApp
-              </a>
+              <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-5xl" style={{fontVariationSettings:"'FILL' 1"}}>check_circle</span>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">আবেদন পাঠানো হয়েছে!</h3>
+              <p className="text-slate-600 mb-8 text-lg">আপনার আবেদনটি সফলভাবে গৃহীত হয়েছে। ২৪ ঘণ্টার মধ্যে আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবে।</p>
+              <div className="flex flex-col gap-3 max-w-xs mx-auto">
+                <a href={`https://wa.me/8801647794452?text=আমি পার্টনার ফর্ম সাবমিট করেছি - ${form.businessName}`} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200">
+                  <span className="material-symbols-outlined">chat</span>
+                  WhatsApp এ ফলো-আপ করুন
+                </a>
+                <button onClick={() => setStatus(null)} className="text-slate-500 text-sm font-semibold hover:underline">নতুন আবেদন করুন</button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">

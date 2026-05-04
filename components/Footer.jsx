@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-container mx-auto px-8 mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
-        <p>© 2024 Badol Tyre Ghar. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Badol Tyre Ghar. All Rights Reserved.</p>
         <div className="flex gap-6">
           <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>

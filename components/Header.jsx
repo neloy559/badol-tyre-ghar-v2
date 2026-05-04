@@ -47,14 +47,15 @@ export default function Header() {
 
         {/* Search */}
         <div className="hidden md:flex flex-1 max-w-md mx-8">
-          <div className="relative w-full">
+          <form action="/products" className="relative w-full">
             <input
+              name="q"
               type="text"
               className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-primary focus:outline-none focus:bg-surface-container-lowest transition-all"
               placeholder="Search tyres, tubes, sealants..."
             />
-            <span className="material-symbols-outlined absolute right-3 top-2 text-primary">search</span>
-          </div>
+            <button type="submit" className="material-symbols-outlined absolute right-3 top-2 text-primary hover:scale-110 transition-transform">search</button>
+          </form>
         </div>
 
         {/* Nav actions */}

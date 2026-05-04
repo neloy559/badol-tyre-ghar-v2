@@ -18,7 +18,7 @@ async function getShops() {
 
 const DEFAULT_SHOPS = [
   { _id:'1', name:'Badol Tyre Ghar (HQ)', district:'রংপুর', thana:'রংপুর সদর', address:'স্টেশন রোড, রংপুর', phone:'01647-794452' },
-  { _id:'2', name:'Badol Tyre – সৈয়দপুর', district:'নীলফামারী', thana:'সৈয়দপুর', address:'সৈয়দপুর বাসস্ট্যান্ড', phone:'01647-794452' },
+  { _id:'2', name:'Badol Tyre – সৈয়দপুর', district:'নীলফামারী', thana:'সৈয়দপুর', address:'সৈয়দপুর বাসস্ট্যান্ড', phone:'01647-794452', note:'সকল যোগাযোগ মূল শাখার মাধ্যমে' },
 ]
 
 export default async function ShopsPage() {
@@ -69,10 +69,13 @@ export default async function ShopsPage() {
                     </p>
                   )}
                   {shop.phone && (
-                    <a href={`tel:+88${shop.phone}`} className="flex items-center gap-2 text-sm font-bold text-primary hover:underline">
-                      <span className="material-symbols-outlined text-sm">call</span>
-                      {shop.phone}
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a href={`tel:+88${shop.phone}`} className="flex items-center gap-2 text-sm font-bold text-primary hover:underline">
+                        <span className="material-symbols-outlined text-sm">call</span>
+                        {shop.phone}
+                      </a>
+                      {shop.note && <p className="text-[10px] text-slate-400 italic">{shop.note}</p>}
+                    </div>
                   )}
                 </div>
               ))}

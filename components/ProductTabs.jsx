@@ -1,73 +1,47 @@
-'use client'
-import { useState } from 'react'
-import Link from 'next/link'
-
-const TABS = [
-  { id: 'marketing',     label: 'Product Overview' },
-  { id: 'engineering',   label: 'Core Engineering' },
-  { id: 'performance',   label: 'Performance Metrics' },
-  { id: 'compatibility', label: 'Application & Compatibility' },
-  { id: 'consumerTrust', label: 'Consumer Value & Trust' },
-]
-
 export default function ProductTabs({ product }) {
-  const [activeTab, setActiveTab] = useState('marketing')
+  const sections = [
+    { id: 'overview',      label: 'Product Overview',       icon: 'info',          content: product.content?.overview || product.description },
+    { id: 'engineering',   label: 'Core Engineering',      icon: 'construction',  content: product.content?.engineering },
+    { id: 'performance',   label: 'Performance Metrics',    icon: 'speed',         content: product.content?.specifications }, // mapping to specs
+    { id: 'compatibility', label: 'Application & Compatibility', icon: 'settings_input_component', content: product.content?.compatibility },
+    { id: 'delivery',      label: 'Wholesale & Delivery',  icon: 'local_shipping', content: product.content?.delivery },
+  ].filter(s => s.content && s.content.length > 5)
 
-  const tabContent = {
-    marketing:     product.content?.marketing     || product.description || 'Marketing details coming soon.',
-    engineering:   product.content?.engineering   || 'Engineering and quality specifications coming soon.',
-    performance:   product.content?.performance   || 'Performance metrics coming soon.',
-    compatibility: product.content?.compatibility || 'Application compatibility information coming soon.',
-    consumerTrust: product.content?.consumerTrust || 'Value proposition coming soon.',
-  }
+  if (sections.length === 0) return null
 
   return (
-    <div className="mt-16">
-      {/* Tab Nav */}
-      <div className="flex border-b border-outline-variant gap-1 overflow-x-auto">
-        {TABS.map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-6 py-3 font-bold text-sm whitespace-nowrap transition-all border-b-2 -mb-px ${
-              activeTab === tab.id
-                ? 'border-primary text-primary'
-                : 'border-transparent text-slate-500 hover:text-primary'
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Tab Content */}
-      <div className="bg-white rounded-b-2xl rounded-tr-2xl border border-outline-variant border-t-0 p-8 mt-0">
-        {tabContent[activeTab]?.split('\n').map((para, i) =>
-          para.trim() ? <p key={i} className="text-slate-600 leading-relaxed mb-4 text-sm">{para}</p> : null
-        )}
-
-        {activeTab === 'consumerTrust' && (
-          <div className="mt-6 bg-surface-container-low rounded-xl p-6 border border-outline-variant">
-            <h4 className="font-bold text-on-surface mb-4">B2B Order Enquiry</h4>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={`https://wa.me/8801647794452?text=আমি ${product.name} (SKU: ${product.sku}) সম্পর্কে জানতে চাই`}
-                target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-wa text-white font-bold px-6 py-3 rounded-xl hover:brightness-95 transition-all text-sm"
-              >
-                <span className="material-symbols-outlined text-base">chat</span>
-                WhatsApp for Delivery Terms
-              </a>
-              <a
-                href="tel:+8801647794452"
-                className="flex items-center gap-2 border-2 border-outline-variant text-on-surface font-bold px-6 py-3 rounded-xl hover:bg-surface-container transition-all text-sm"
-              >
-                <span className="material-symbols-outlined text-base">call</span>
-                Call Us Directly
-              </a>
+    <div className="mt-16 space-y-12">
+      {sections.map(s => (
+        <div key={s.id} className="scroll-mt-24">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+              <span className="material-symbols-outlined">{s.icon}</span>
             </div>
+            <h2 className="text-2xl font-bold text-on-surface">{s.label}</h2>
           </div>
-        )}
+          <div className="bg-white rounded-3xl border border-outline-variant p-8 shadow-sm">
+            {s.content.split('\n').map((para, i) => (
+              para.trim() ? <p key={i} className="text-slate-600 leading-relaxed mb-4 text-sm">{para}</p> : null
+            ))}
+          </div>
+        </div>
+      ))}
+      
+      <div className="bg-slate-900 rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 className="text-xl font-bold mb-2">Ready to place a wholesale order?</h4>
+          <p className="text-slate-400 text-sm">Contact our sales team for personalized volume pricing and shipping schedules.</p>
+        </div>
+        <div className="flex gap-4">
+          <a
+            href={`https://wa.me/8801647794452?text=আমি ${product.name} (SKU: ${product.sku}) সম্পর্কে জানতে চাই`}
+            target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-wa text-white font-bold px-6 py-3 rounded-xl hover:brightness-95 transition-all text-sm"
+          >
+            <span className="material-symbols-outlined text-base">chat</span>
+            WhatsApp Enquiry
+          </a>
+        </div>
       </div>
     </div>
   )

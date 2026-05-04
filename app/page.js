@@ -9,12 +9,23 @@ export const revalidate = 60 // Enable ISR caching for 60 seconds
 async function getFeaturedProducts() {
   try {
     await connectDB()
-    // Prefer Tyre Sealants with actual images first, then others
-    const products = await Product.find({ 
-      inStock: true, 
-      isPlaceholder: false 
-    }).sort({ category: -1 }).limit(8).lean() 
-    return JSON.parse(JSON.stringify(products))
+    const categories = ['Tubes', 'Patches', 'Gadgets', 'Tyre Sealants', 'Tyres', 'Flaps']
+    let featured = []
+    
+    for (const cat of categories) {
+      const prods = await Product.find({ 
+        category: cat,
+        inStock: true, 
+      }).limit(2).lean()
+      featured = [...featured, ...prods]
+    }
+    
+    // Fallback if none found
+    if (featured.length === 0) {
+      featured = await Product.find({ inStock: true }).limit(8).lean()
+    }
+    
+    return JSON.parse(JSON.stringify(featured))
   } catch {
     return []
   }
@@ -92,7 +103,6 @@ export default async function HomePage() {
       <section className="py-20 container-page">
         <div className="flex justify-between items-end mb-12">
           <div>
-            <span className="text-primary text-sm font-bold tracking-widest mb-2 block uppercase">Departmental Search</span>
             <h2 className="text-3xl font-bold text-slate-900">Wholesale Categories</h2>
           </div>
           <Link href="/products" className="text-primary font-bold flex items-center gap-1 hover:underline text-sm">
