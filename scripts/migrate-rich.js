@@ -96,10 +96,10 @@ async function runMigration() {
       }
     }
     
-    // If no actual images, use a random placeholder
+    // If no images in cat img 2, use a random placeholder
     if (!hasActualImage) {
       const randomId = Math.floor(Math.random() * 8) + 1
-      productData.images = [`/placeholders/placeholder img (${randomId}).jpeg`]
+      productData.images = [`/images/placeholders/placeholder img (${randomId}).jpeg`]
     }
     
     productData.isPlaceholder = !hasActualImage
