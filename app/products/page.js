@@ -155,7 +155,7 @@ export default async function ProductsPage({ searchParams }) {
                         className="object-contain group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         priority={index < 8}
-                        onError={(e) => { e.currentTarget.src = '/images/placeholders/placeholder img (1).jpeg' }}
+                        onError={(e) => { e.currentTarget.src = '/images/placeholders/p1.jpeg' }}
                       />
                     ) : (
                       <span className="material-symbols-outlined text-slate-300 text-8xl group-hover:scale-110 transition-transform duration-500">tire_repair</span>
