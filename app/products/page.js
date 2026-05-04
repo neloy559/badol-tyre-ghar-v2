@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import OptimizedImage from '@/components/OptimizedImage'
 import { connectDB } from '@/lib/mongodb'
 import { Product } from '@/lib/models'
 
@@ -148,14 +149,13 @@ export default async function ProductsPage({ searchParams }) {
                 >
                   <div className="aspect-square bg-white overflow-hidden relative flex items-center justify-center p-4">
                     {product.images && product.images.length > 0 ? (
-                        <Image 
+                        <OptimizedImage 
                         src={product.images[0]} 
                         alt={product.name}
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         priority={index < 8}
                         className="object-contain group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => { e.currentTarget.src = '/images/placeholders/placeholder-img-1.jpeg' }}
                       />
                     ) : (
                       <span className="material-symbols-outlined text-slate-300 text-8xl group-hover:scale-110 transition-transform duration-500">tire_repair</span>

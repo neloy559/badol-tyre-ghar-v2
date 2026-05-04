@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import OptimizedImage from '@/components/OptimizedImage'
 import { connectDB } from '@/lib/mongodb'
 import { Product } from '@/lib/models'
 
@@ -124,14 +125,13 @@ export default async function HomePage() {
                 <Link key={product._id} href={`/product/${product._id}`} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all">
                   <div className="aspect-square relative bg-white overflow-hidden p-4">
                     {product.images && product.images.length > 0 ? (
-                      <Image 
+                      <OptimizedImage 
                         src={product.images[0]} 
                         alt={product.name}
                         fill
                         className="object-contain group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         priority={index < 4}
-                        onError={(e) => { e.currentTarget.src = '/images/placeholders/placeholder-img-1.jpeg' }}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
