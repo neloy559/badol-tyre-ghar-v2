@@ -131,7 +131,7 @@ export default async function HomePage() {
                         className="object-contain group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         priority={index < 4}
-                        onError={(e) => { e.currentTarget.src = '/images/placeholders/p1.jpeg' }}
+                        onError={(e) => { e.currentTarget.src = '/images/placeholders/placeholder-img-1.jpeg' }}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">

@@ -25,7 +25,7 @@ export default function ProductGallery({ images }) {
           fill 
           className="object-contain" 
           priority
-          onError={(e) => { e.currentTarget.src = '/images/placeholders/p1.jpeg' }}
+          onError={(e) => { e.currentTarget.src = '/images/placeholders/placeholder-img-1.jpeg' }}
         />
       </div>
       {images.length > 1 && (
@@ -41,7 +41,7 @@ export default function ProductGallery({ images }) {
                 fill
                 className="object-cover" 
                 alt="Thumb" 
-                onError={(e) => { e.currentTarget.src = '/images/placeholders/p1.jpeg' }}
+                onError={(e) => { e.currentTarget.src = '/images/placeholders/placeholder-img-1.jpeg' }}
               />
             </div>
           ))}

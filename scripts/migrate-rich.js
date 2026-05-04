@@ -47,9 +47,9 @@ async function runMigration() {
     const entries = fs.readdirSync(dir, { withFileTypes: true })
     let isProductFolder = false
     
-    // A product folder is one that contains 'cat img' or any of the txt files
+    // A product folder is one that contains 'cat img', 'cat img 2' or any of the txt files
     for (const e of entries) {
-      if (e.name === 'cat img' || TEXT_FILES[e.name]) {
+      if (e.name === 'cat img' || e.name === 'cat img 2' || TEXT_FILES[e.name]) {
         isProductFolder = true
         break
       }
@@ -99,7 +99,7 @@ async function runMigration() {
     // If no images in cat img 2, use a random placeholder
     if (!hasActualImage) {
       const randomId = Math.floor(Math.random() * 8) + 1
-      productData.images = [`/images/placeholders/p${randomId}.jpeg`]
+      productData.images = [`/images/placeholders/placeholder-img-${randomId}.jpeg`]
     }
     
     productData.isPlaceholder = !hasActualImage
