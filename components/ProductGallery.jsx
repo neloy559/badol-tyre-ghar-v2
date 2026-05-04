@@ -20,7 +20,7 @@ export default function ProductGallery({ images }) {
     <div>
       <div className="aspect-square bg-surface-container-low rounded-3xl border border-outline-variant overflow-hidden flex items-center justify-center mb-4 relative">
         <Image 
-          src={encodeURI(activeImg)} 
+          src={activeImg} 
           alt="Product Image" 
           fill 
           className="object-contain" 
@@ -37,7 +37,7 @@ export default function ProductGallery({ images }) {
               className={`w-20 h-20 shrink-0 rounded-xl border-2 overflow-hidden bg-surface-container-low relative cursor-pointer transition-colors ${activeImg === img ? 'border-primary' : 'border-outline-variant hover:border-primary/50'}`}
             >
               <Image 
-                src={encodeURI(img)} 
+                src={img} 
                 fill
                 className="object-cover" 
                 alt="Thumb" 

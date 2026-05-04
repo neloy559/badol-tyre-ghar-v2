@@ -149,7 +149,7 @@ export default async function ProductsPage({ searchParams }) {
                   <div className="aspect-square bg-white overflow-hidden relative flex items-center justify-center p-4">
                     {product.images && product.images.length > 0 ? (
                         <Image 
-                        src={encodeURI(product.images[0])} 
+                        src={product.images[0]} 
                         alt={product.name}
                         fill
                         className="object-contain group-hover:scale-105 transition-transform duration-500"

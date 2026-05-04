@@ -125,7 +125,7 @@ export default async function HomePage() {
                   <div className="aspect-square relative bg-white overflow-hidden p-4">
                     {product.images && product.images.length > 0 ? (
                       <Image 
-                        src={encodeURI(product.images[0])} 
+                        src={product.images[0]} 
                         alt={product.name}
                         fill
                         className="object-contain group-hover:scale-105 transition-transform duration-500"
