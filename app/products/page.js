@@ -211,7 +211,18 @@ export default async function ProductsPage({ searchParams }) {
                     </div>
                     <div className="p-5">
                       <div className="flex justify-between items-start mb-2">
-                        <span className="text-[10px] font-bold text-primary uppercase tracking-wider">{product.category}</span>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[10px] font-bold text-primary uppercase tracking-wider">{product.category}</span>
+                          {product.segment && (
+                            <span className={`text-[9px] font-bold px-2 py-0.5 rounded-md border inline-block w-fit ${
+                              product.segment === 'Premium' ? 'bg-amber-50 text-amber-600 border-amber-200' :
+                              product.segment === 'Balanced' ? 'bg-blue-50 text-blue-600 border-blue-200' :
+                              'bg-slate-50 text-slate-600 border-slate-200'
+                            }`}>
+                              {product.segment}
+                            </span>
+                          )}
+                        </div>
                         <span className="text-[10px] text-on-surface-variant font-semibold">SKU: {product.sku}</span>
                       </div>
                       <h4 className="font-bold text-on-surface mb-2 text-sm leading-snug h-10 line-clamp-2">{product.name}</h4>

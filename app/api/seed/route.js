@@ -15,14 +15,18 @@ export async function GET() {
         await Product.updateOne(
           { sku: p.sku },
           {
-            $setOnInsert: {
+            $set: {
               name:     p.name,
-              sku:      p.sku,
               category: p.category,
+              segment:  p.segment || '',
               brand:    p.brand || 'Badol',
               description: p.spec || p.description || '',
               images:   p.images || [],
               inStock:  true,
+              isPlaceholder: !!p.isPlaceholder,
+            },
+            $setOnInsert: {
+              sku:      p.sku,
               content: {
                 overview:      p.spec || '',
                 engineering:   '',
